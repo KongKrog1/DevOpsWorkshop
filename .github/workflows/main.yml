@@ -1,7 +1,7 @@
 name: Main workflow
 on: push
 env: # Set the secret as an input
-  docker_username: oskarkrog
+  docker_username: kongkrog1
   docker_password: ${{ secrets.GITHUB_TOKEN }}
   GIT_COMMIT: ${{ github.sha }}
 jobs:
@@ -34,7 +34,7 @@ jobs:
         env:
           DEFAULT_BRANCH: main
           # To report GitHub Actions status checks
-          GITHUB_TOKEN: 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
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           DISABLE_ERRORS: true      
   Docker-image:
     runs-on: ubuntu-latest
